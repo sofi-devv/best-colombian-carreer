@@ -26,7 +26,7 @@ categoria_seleccionada = st.sidebar.selectbox('Selecciona una categoría (opcion
 
 # Botón de calcular
 boton_calcular = st.sidebar.button('Calcular')
-st.image( 'appLogo.png' ,width=56)
+st.image( 'appLogo.png' ,width=46)
 
 # Título principal y subtítulo en el área de contenido principal
 st.title("Encuentra la carrera que se acomode a tu presupuesto 👨‍🏫")
