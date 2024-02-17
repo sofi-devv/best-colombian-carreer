@@ -31,7 +31,6 @@ boton_calcular = st.sidebar.button('Calcular')
 st.title("Encuentra la carrera que se acomode a tu presupuesto 👨‍🏫")
 st.header("Conoce el retorno de inversión de las carreras universitarias en Colombia")
 st.caption("Desliza la barra si te encuetras en un dispositivo móvil para ingresar el rango de inversión 📱 .")
-st.divider()
 
 # Lógica para filtrar y calcular el retorno de inversión
 if boton_calcular:
