@@ -16,26 +16,21 @@ def calcular_retorno_inversion(row, inflacion=0.05, porcentaje_ahorro=0.30):
 # Título y configuración de la barra lateral
 
 st.image( 'appLogo.png' ,width=180)
-# Definir el color personalizado y el texto
-color_personalizado = "#27047D"
-texto_personalizado = "Descubre la carrera ideal en el campo que te apasiona y te permita recuperar rápidamente tu inversión."
-
-# Usar HTML y CSS para cambiar el color del texto del encabezado
-st.markdown(f'<h1 style="color: {color_personalizado};">{texto_personalizado}</h1>', unsafe_allow_html=True)
+st.header(f":darkblue[Descubre la carrera ideal en el campo que te apasiona y te permita recuperar rápidamente tu inversión.]")
 st.divider()
 
 
 # has una calculadora que reciba el numero de semetre y la inversion aproximada por semestre
 
-st.subheader("1. Ingresa el número de semestres que durará tu carrera")
+st.subheader("Ingresa el número de semestres que durará tu carrera")
 semestres = st.number_input('Número de semestres', value=10, step=1)
 inversion_semestre = st.number_input('Inversión estimada por semestre', value=4000000, step=100000)
 inversion_total = semestres * inversion_semestre
-st.markdown(f" ##### **Tu inversión total será de**: {inversion_total:,.0f}COP")
+st.markdown(f" ### **Tu inversión total será de**: {inversion_total:,.0f}COP")
 
 st.divider()
 
-st.subheader("2. Ingresa el rango de tu inversión para toda tu educación superior")
+st.subheader("Ingresa el rango de tu inversión para toda tu educación superior")
 min_inversion = st.number_input('Mínimo de Inversión para toda tu carrera', value=82000000, step=1000000)
 # Mostrar min_inversion y max_inversion con formato
 st.markdown(f"**Mínimo de inversión para toda tu carrera**: {min_inversion:,.0f} COP")

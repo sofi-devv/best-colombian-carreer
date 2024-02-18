@@ -15,39 +15,18 @@ def calcular_retorno_inversion(row, inflacion=0.05, porcentaje_ahorro=0.30):
 # Título y configuración de la barra lateral
 # Título y configuración de la barra lateral
 
-st.image( 'appLogo.png' ,width=180)
-# Definir el color personalizado y el texto
-color_personalizado = "#27047D"
-texto_personalizado = "Descubre la carrera ideal en el campo que te apasiona y te permita recuperar rápidamente tu inversión."
+st.image( 'appLogo.png' ,width=56)
+st.header("Encuentra la carrera que se ajusta a tu presupuesto y conoce en tiempo y dinero el retorno de tu inversión👨‍🏫")
 
-# Usar HTML y CSS para cambiar el color del texto del encabezado
-st.markdown(f'<h1 style="color: {color_personalizado};">{texto_personalizado}</h1>', unsafe_allow_html=True)
-st.divider()
-
-
-# has una calculadora que reciba el numero de semetre y la inversion aproximada por semestre
-
-st.subheader("1. Ingresa el número de semestres que durará tu carrera")
-semestres = st.number_input('Número de semestres', value=10, step=1)
-inversion_semestre = st.number_input('Inversión estimada por semestre', value=4000000, step=100000)
-inversion_total = semestres * inversion_semestre
-st.markdown(f" ##### **Tu inversión total será de**: {inversion_total:,.0f}COP")
-
-st.divider()
-
-st.subheader("2. Ingresa el rango de tu inversión para toda tu educación superior")
-min_inversion = st.number_input('Mínimo de Inversión para toda tu carrera', value=82000000, step=1000000)
-# Mostrar min_inversion y max_inversion con formato
-st.markdown(f"**Mínimo de inversión para toda tu carrera**: {min_inversion:,.0f} COP")
-
-max_inversion = st.number_input('Máximo de Inversión para toda tu carrera', value=90000000, step=1000000)
-st.markdown(f"**Máximo de inversión para toda tu carrera**: {max_inversion:,.0f} COP")
+st.subheader("Ingresa el rango de tu inversión para toda tu educación superior")
+min_inversion = st.number_input('Mínimo de Inversión', value=82000000, step=1000000)
+max_inversion = st.number_input('Máximo de Inversión', value=90000000, step=1000000)
 
 # Selector de categoría con opción para "Todas las Categorías"
 categorias = df_salario['CINE_F_2013_AC_CAMPO_DETALLADO'].unique().tolist()
 categorias.sort()  # Opcional: Ordenar las categorías alfabéticamente
 categorias = ['Todas las Categorías'] + categorias  # Añadir opción para no filtrar
-categoria_seleccionada = st.selectbox('Selecciona tu área de interés educativa', categorias)
+categoria_seleccionada = st.selectbox('Selecciona una categoría (opcional)', categorias)
 
 # Botón de calcular
 boton_calcular = st.button('Calcular')
@@ -56,6 +35,7 @@ boton_calcular = st.button('Calcular')
 # Título principal y subtítulo en el área de contenido principal
 
 
+st.caption("Desliza la barra si te encuetras en un dispositivo móvil para ingresar el rango de inversión 📱 .")
 st.divider()
 
 # Lógica para filtrar y calcular el retorno de inversión
@@ -71,12 +51,11 @@ if boton_calcular:
     else:
     
         # Asegurarse de seleccionar solo las columnas deseadas
-        columnas_deseadas = ['NOMBRE_DEL_PROGRAMA', 'años_retorno_inversion', 'costo_total_con_inflacion', 'MEDIANA_SALARIO']
+        columnas_deseadas = ['NOMBRE_DEL_PROGRAMA', 'años_retorno_inversion', 'costo_total_con_inflacion']
         tabla_top_3 = top_3_carreras[columnas_deseadas]
         tabla_top_3_styled = tabla_top_3.style.format({
-            'Años para Retorno de Inversión': '{:.2f} años',
-            'Costo total de la carrera': '${:,.2f}',
-            'Mediana de salario': '${:,.2f}'
+            'años_retorno_inversion': '{:.2f} años',
+            'costo_total_con_inflacion': '${:,.2f}'
         })
         
         # Mostrar la tabla estilizada en Streamlit
