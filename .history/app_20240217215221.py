@@ -36,7 +36,7 @@ st.markdown(f" ##### **Tu inversión total será de**: {inversion_total:,.0f}COP
 st.divider()
 
 st.subheader("2. Ingresa el rango de tu inversión para toda tu educación superior")
-min_inversion = st.number_input('Mínimo de Inversión para toda tu carrera', value=60000000, step=1000000)
+min_inversion = st.number_input('Mínimo de Inversión para toda tu carrera', value=82000000, step=1000000)
 # Mostrar min_inversion y max_inversion con formato
 st.markdown(f"**Mínimo de inversión para toda tu carrera**: {min_inversion:,.0f} COP")
 
@@ -69,7 +69,7 @@ if boton_calcular:
     if top_3_carreras.empty:
         st.warning("Ups, tal vez debes incrementar o disminuir tu inversión mínima.")
     else:
-        st.subheader(" ✨ 3. Top 3 de carreras con menor tiempo de retorno de inversión ✨")
+        st.subheader("3. Top 3 de carreras con menor tiempo de retorno de inversión")
 
         columnas_deseadas = ['NOMBRE_DEL_PROGRAMA', 'años_retorno_inversion', 'costo_total_con_inflacion']
         tabla_top_3 = top_3_carreras[columnas_deseadas]

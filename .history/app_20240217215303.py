@@ -36,7 +36,7 @@ st.markdown(f" ##### **Tu inversión total será de**: {inversion_total:,.0f}COP
 st.divider()
 
 st.subheader("2. Ingresa el rango de tu inversión para toda tu educación superior")
-min_inversion = st.number_input('Mínimo de Inversión para toda tu carrera', value=60000000, step=1000000)
+min_inversion = st.number_input('Mínimo de Inversión para toda tu carrera', value=82000000, step=1000000)
 # Mostrar min_inversion y max_inversion con formato
 st.markdown(f"**Mínimo de inversión para toda tu carrera**: {min_inversion:,.0f} COP")
 
