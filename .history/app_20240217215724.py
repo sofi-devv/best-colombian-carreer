@@ -73,12 +73,10 @@ if boton_calcular:
 
         columnas_deseadas = ['NOMBRE_DEL_PROGRAMA', 'años_retorno_inversion', 'costo_total_con_inflacion']
         tabla_top_3 = top_3_carreras[columnas_deseadas]
-
-        # Asegúrate de usar los nombres de columnas correctos y el formato deseado
         tabla_top_3_styled = tabla_top_3.style.format({
-            'años_retorno_inversion': '{:.2f} años',  # Formato para años de retorno de inversión con 1 decimal
-            'costo_total_con_inflacion': '${:,.2f}'   # Formato para costo total con inflación en formato de moneda y 1 decimal
+            'Años para Retorno de Inversión': '{:.0f} años',
+            'Costo total de la carrera': '${:,.0f}'
         })
-
+        
         # Mostrar la tabla estilizada en Streamlit
         st.dataframe(tabla_top_3_styled)

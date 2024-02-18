@@ -76,8 +76,8 @@ if boton_calcular:
 
         # Asegúrate de usar los nombres de columnas correctos y el formato deseado
         tabla_top_3_styled = tabla_top_3.style.format({
-            'años_retorno_inversion': '{:.2f} años',  # Formato para años de retorno de inversión con 1 decimal
-            'costo_total_con_inflacion': '${:,.2f}'   # Formato para costo total con inflación en formato de moneda y 1 decimal
+            'años_retorno_inversion': '{:.1f} años',  # Formato para años de retorno de inversión con 1 decimal
+            'costo_total_con_inflacion': '${:,.1f}'   # Formato para costo total con inflación en formato de moneda y 1 decimal
         })
 
         # Mostrar la tabla estilizada en Streamlit
